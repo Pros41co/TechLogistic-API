@@ -26,11 +26,8 @@ public class TipoProductoController {
         return tipoProductoServicio.getAllTipoProductos();
     }
 
-    @PostMapping
+    @PostMapping(path = "/create")
     public TipoProducto createTipoProducto(@RequestBody TipoProductoDTO dto){
         return tipoProductoServicio.saveTipoProducto(dto);
     }
-
-    
-
 }

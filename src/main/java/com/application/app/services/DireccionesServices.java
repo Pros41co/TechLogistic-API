@@ -4,7 +4,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.application.app.models.Direcciones;
-import com.application.app.models.DireccionesDTO;
+import com.application.app.Dto.DireccionesDTO;
 import com.application.app.models.Cliente;
 import com.application.app.respositories.ClientesRepositorio;
 import com.application.app.respositories.DireccionesRepositories;

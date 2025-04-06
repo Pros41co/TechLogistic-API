@@ -2,8 +2,9 @@ package com.application.app.controllers;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.application.app.Dto.DireccionesDTO;
 import com.application.app.models.Direcciones;
-import com.application.app.models.DireccionesDTO;
 import com.application.app.services.DireccionesServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -27,7 +28,7 @@ public class DireccionesController {
     }
 
     @PostMapping("/crear")
-    public Direcciones postMethodName(@RequestBody DireccionesDTO request) {
+    public Direcciones createDireccion(@RequestBody DireccionesDTO request) {
         return  direccionServicio.crearDireccion(request);
     }
     
