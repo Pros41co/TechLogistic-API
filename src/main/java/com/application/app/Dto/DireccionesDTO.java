@@ -1,4 +1,4 @@
-package com.application.app.models;
+package com.application.app.Dto;
 
 public class DireccionesDTO {
     private String direccion;
