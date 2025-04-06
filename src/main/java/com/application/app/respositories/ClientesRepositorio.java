@@ -1,10 +1,9 @@
 package com.application.app.respositories;
 
-import java.util.List;
+
+import org.springframework.data.repository.CrudRepository;
 
 import com.application.app.models.Cliente;
 
-public interface ClientesRepositorio {
-    List<Cliente> findAll();
-    Cliente getClienteById(Long id_cliente);
+public interface ClientesRepositorio extends CrudRepository<Cliente, Long>{
 }

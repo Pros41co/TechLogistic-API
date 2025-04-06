@@ -1,5 +1,6 @@
 package com.application.app.models;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -12,7 +13,8 @@ public class Cliente implements Cloneable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id_cliente;
+    @Column(name = "id_cliente")
+    Long idCliente;
 
     String primer_nombre;
     String primer_apellido;
@@ -24,17 +26,17 @@ public class Cliente implements Cloneable{
     }
 
     public Cliente(Long id_cliente, String primer_nombre, String primer_apellido, String cedula) {
-        this.id_cliente = id_cliente;
+        this.idCliente = id_cliente;
         this.primer_nombre = primer_nombre;
         this.primer_apellido = primer_apellido;
         this.cedula = cedula;
     }
 
     public Long getId_cliente() {
-        return id_cliente;
+        return idCliente;
     }
     public void setId_cliente(Long id_cliente) {
-        this.id_cliente = id_cliente;
+        this.idCliente = id_cliente;
     }
     public String getPrimer_nombre() {
         return primer_nombre;
