@@ -1,15 +1,28 @@
 package com.application.app.models;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
-
+@Entity
+@Table(name = "cliente")
 public class Cliente implements Cloneable{
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id_cliente;
+
     String primer_nombre;
     String primer_apellido;
     String cedula;
 
     
+    
+    public Cliente() {
+    }
+
     public Cliente(Long id_cliente, String primer_nombre, String primer_apellido, String cedula) {
         this.id_cliente = id_cliente;
         this.primer_nombre = primer_nombre;
