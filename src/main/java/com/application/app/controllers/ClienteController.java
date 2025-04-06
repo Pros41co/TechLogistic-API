@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.application.app.models.Cliente;
 import com.application.app.services.ClienteServices;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,7 +18,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping(path = "/api")
 public class ClienteController {
 
-    private ClienteServices servicio = new ClienteServices();
+    @Autowired
+    private ClienteServices servicio;
 
     @GetMapping("/clientes")
     public List<Cliente> listaClientes(){

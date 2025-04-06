@@ -2,7 +2,7 @@ package com.application.app.models;
 
 
 
-public class Cliente {
+public class Cliente implements Cloneable{
 
     Long id_cliente;
     String primer_nombre;
