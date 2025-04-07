@@ -1,6 +1,7 @@
 package com.application.app.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,11 +21,7 @@ public class ConductorServices {
     @Autowired
     VehiculosRepositorio vehiculoRepository;
 
-    public Conductor saveConductor(Conductor conductor){
-        return conductorRepository.save(conductor);
-    }
-
-    public Conductor crearConductor(ConductorDTO request){
+    public Conductor saveConductor(ConductorDTO request){
         Vehiculo vehiculo = vehiculoRepository.findById(request.getIdVehiculo()).orElseThrow(() -> new RuntimeException("Cliente no encontrado"));
 
         Conductor conductor = new Conductor();
@@ -42,7 +39,7 @@ public class ConductorServices {
         return (List<Conductor>)conductorRepository.findAll();
     }
 
-        public Conductor updateNombreConductor(Long id, String nuevoNombre, String nuevoApellido, String nuevoTelefono, String nuevaCedula){
+        public Conductor updateConductor(Long id, String nuevoNombre, String nuevoApellido, String nuevoTelefono, String nuevaCedula){
         Conductor conductor = conductorRepository.findById(id).orElseThrow(() -> new RuntimeException("Producto no Encontrado"));
         conductor.setNombre(nuevoNombre);
         conductor.setApellido(nuevoApellido);
@@ -50,6 +47,12 @@ public class ConductorServices {
         conductor.setTelefono(nuevoTelefono);
         return conductorRepository.save(conductor);
     }
+
+        public Optional<Conductor> getConductorById(Long id){
+        return conductorRepository.findById(id);
+    }
+
+
 
 
 }

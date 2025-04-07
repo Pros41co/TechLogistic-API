@@ -19,7 +19,7 @@ public class ClienteServices {
     }
 
     public List<Cliente> findAClientes(){
-        return (List<Cliente> )clientesRepositorio.findAll();
+        return (List<Cliente>)clientesRepositorio.findAll();
     }
 
     public Optional<Cliente> getClienteById(Long id){

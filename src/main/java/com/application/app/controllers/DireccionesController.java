@@ -27,7 +27,7 @@ public class DireccionesController {
         return direcciones;
     }
 
-    @PostMapping("/crear")
+    @PostMapping("/create")
     public Direcciones createDireccion(@RequestBody DireccionesDTO request) {
         return  direccionServicio.crearDireccion(request);
     }

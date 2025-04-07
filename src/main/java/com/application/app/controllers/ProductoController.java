@@ -34,7 +34,7 @@ public class ProductoController {
         return productoServicio.saveProducto(dto);
     }
 
-    @PutMapping("path/{id}")
+    @PutMapping("/modificar")
         public ResponseEntity<Producto> actualizarNombre(@RequestBody Map<String, String> body){
             String nuevoNombre = body.get("nombre");
             Long id = Long.parseLong(body.get("id"));
